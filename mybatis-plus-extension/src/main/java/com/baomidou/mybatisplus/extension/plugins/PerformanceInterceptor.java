@@ -209,11 +209,15 @@ public class PerformanceInterceptor implements Interceptor {
     public void setProperties(Properties prop) {
         String maxTime = prop.getProperty("maxTime");
         String format = prop.getProperty("format");
+        String writeInLog = prop.getProperty("writeInLog");
         if (StringUtils.isNotEmpty(maxTime)) {
             this.maxTime = Long.parseLong(maxTime);
         }
         if (StringUtils.isNotEmpty(format)) {
             this.format = Boolean.valueOf(format);
+        }
+        if (StringUtils.isNotEmpty(writeInLog)) {
+            this.writeInLog = Boolean.valueOf(writeInLog);
         }
     }
 
